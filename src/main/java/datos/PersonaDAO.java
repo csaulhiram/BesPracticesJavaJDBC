@@ -4,8 +4,6 @@ import static datos.Conexion.getConnection;
 import domain.Persona;
 import java.sql.*;
 import java.util.*;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 
 public class PersonaDAO {
 
@@ -26,7 +24,7 @@ public class PersonaDAO {
             rs = stmt.executeQuery();// We execute Query
 
             while (rs.next()) { // Get registers
-                int idPersona = rs.getInt("id_pdersona");
+                int idPersona = rs.getInt("id_persona");
                 String nombre = rs.getString("nombre");
                 String apellido = rs.getString("apellido");
                 String email = rs.getString("email");
@@ -39,7 +37,7 @@ public class PersonaDAO {
             }
         } catch (SQLException ex) {
             ex.printStackTrace(System.out);
-        } finally {
+        } finally {// Close conections
             try {
                 Conexion.close(rs);
                 Conexion.close(stmt);
@@ -48,7 +46,7 @@ public class PersonaDAO {
                 ex.printStackTrace(System.out);
             }
         }
-
+        System.out.println(personas);
         return personas;
     }
 }

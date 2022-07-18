@@ -9,7 +9,7 @@ import java.sql.SQLException;
 public class TestMySqlJDBC {
 
     public static void main(String[] args) {
-        var url = "jdbc:mysql://localhost:3306/test?useSSL=false&useTimezone=true&serverTimezone=UTC&allowPublicKeyRetrival=true";
+            var url = "jdbc:mysql://localhost:3306/test?useSSL=false&useTimezone=true&serverTimezone=UTC&allowPublicKeyRetrival=true";
         // Password
         String password = "728542";
         // Usuario 

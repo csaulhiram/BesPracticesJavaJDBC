@@ -8,7 +8,7 @@ public class Conexion {
     
     // Obtener la conexión a la base de datos
     public static Connection getConnection() throws SQLException {
-        return DriverManager.getConnection(JDBC_URL, JDBC_USER, JDBC_USER); 
+        return DriverManager.getConnection(JDBC_URL, JDBC_USER, JDBC_PASSWORD); 
     }
     
     public static void close(ResultSet rs) throws SQLException {
@@ -22,5 +22,9 @@ public class Conexion {
     
     public static void close (PreparedStatement smtm) throws SQLException {
         smtm.close();
+    }
+    
+    public static void close (Connection conn) throws SQLException {
+        conn.close();
     }
 }
