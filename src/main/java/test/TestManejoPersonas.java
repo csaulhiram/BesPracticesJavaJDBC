@@ -33,7 +33,7 @@ public class TestManejoPersonas {
         System.out.println("\t\tDELETE QUERY");
         System.out.println("***************************************");
 
-        Persona persona3 = new Persona(17);
+        Persona persona3 = new Persona(18);
         personaDao.eliminar(persona3);
 
         // Show the new list of personas
@@ -47,7 +47,8 @@ public class TestManejoPersonas {
         Persona persona4 = new Persona(16, "saul hiram", "castilloCastro", "update@test.com", "77777777777");
         personaDao.actualizar(persona4);
 
-        // Show the new list of personas
+        
+        //Show the new list of personas
         personas = personaDao.seleccionar();
         listarPersonas(personas);
     }

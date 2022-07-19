@@ -8,10 +8,10 @@ import java.util.*;
 
 public class PersonaDAO {
 
-    private static final String SQL_SELECT = "SELECT id_persona, nombre, apellido, email, telefono FROM  persona";
-    private static final String SQL_INSERT = "INSERT INTO persona(nombre, apellido, email, telefono) VALUES(?, ?, ?, ?)";
-    private static final String SQL_DELETE = "DELETE  FROM persona WHERE id_persona = ?";
-    private static final String SQL_UPDATE = "UPDATE  persona SET nombre = ?, apellido = ?, email = ?, telefono = ? WHERE id_persona = ?";
+    private static final String SQL_SELECT = "SELECT id_persona, nombre, apellido, email, telefono FROM  personas";
+    private static final String SQL_INSERT = "INSERT INTO personas(nombre, apellido, email, telefono) VALUES(?, ?, ?, ?)";
+    private static final String SQL_UPDATE = "UPDATE  personas SET nombre = ?, apellido = ?, email = ?, telefono = ? WHERE id_persona = ?";
+    private static final String SQL_DELETE = "DELETE  FROM personas WHERE id_persona = ?";
 
     public List<Persona> seleccionar() {
 
@@ -82,6 +82,7 @@ public class PersonaDAO {
                 ex.printStackTrace();
             }
         }
+        // Number of registers inserted on db
         return registros;
     }
 
@@ -116,7 +117,7 @@ public class PersonaDAO {
         Connection conn = null;
         PreparedStatement stmt = null;
         int registros = 0;
-
+        
         try {
             conn = getConnection();
             stmt = conn.prepareStatement(SQL_UPDATE);
@@ -141,6 +142,7 @@ public class PersonaDAO {
                 ex.printStackTrace();
             }
         }
+        // Number of registers updated
         return registros;
     }
 }
